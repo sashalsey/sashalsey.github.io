@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Strong Form and Weak Form</title>
+  <script id="MathJax-script" async
+          src="https://cdn.jsdelivr.net/npm/mathjax@3.0.1/es5/tex-mml-chtml.js">
+  </script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    h1, h2 {
+      border-top: 2px solid black;
+      border-bottom: 2px solid black;
+      padding: 5px;
+      font-weight: bold;
+    }
+    p {
+      font-size: 1.1em;
+      margin: 10px 0;
+    }
+    ul {
+      margin-left: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Strong Form</h1>
+<p>
+  Strong form equations are partial differential equations (PDEs):
+</p>
+<ul>
+  <li>They are met at every point in the domain</li>
+  <li>Must be smooth and differentiable at every point</li>
+</ul>
+
+<p><strong>Poisson equation</strong></p>
+<p>
+  \[
+  \nabla^2 u = f \quad \text{in} \; \Omega = (0,1)^2
+  \]
+</p>
+
+<p>With homogeneous Dirichlet boundary conditions (BCs)</p>
+<p>
+  \[
+  u(\partial \Omega) = 0 \quad (\partial \Omega) = \{(x, y) | x = 0, 1 \; \text{or} \; y = 0, 1 \}
+  \]
+</p>
+
+<h1>Weak Form</h1>
+<p>
+  Weak form equations are derived from multiplying the strong form by a test function, and integrating over the domain:
+</p>
+<ul>
+  <li>Do not have to be smooth or piecewise continuous, thus reducing continuity requirements</li>
+</ul>
+
+<p>Multiplying the PDE by weight function \(v(x, y)\):</p>
+<p>
+  \[
+  \nabla^2 u = f v
+  \]
+</p>
+
+<p>Integrating over the domain:</p>
+<p>
+  \[
+  \int_{\Omega} v \nabla^2 u = \int_{\Omega} f v
+  \]
+</p>
+
+<p>[Using the rule \( \nabla (v \nabla u) = \nabla v \cdot \nabla u + v \nabla^2 u \)]</p>
+<p>Hence:</p>
+<p>
+  \[
+  \int_{\Omega} v \nabla^2 u = \int_{\Omega} f v
+  \]
+  \[
+  \int_{\Omega} v \nabla^2 u = \int_{\Omega} (v \nabla u) - \int_{\Omega} \nabla v \cdot \nabla u
+  \]
+</p>
+
+<p>Using Gauss' divergence theorem:</p>
+<p>
+  \[
+  \int_{\Omega} \nabla (v \nabla u) = \int_{\partial \Omega} v \nabla u \cdot \hat{n} \, dS = 0
+  \]
+</p>
+
+<p>Therefore:</p>
+<p>
+  \[
+  \int_{\Omega} v \nabla^2 u = - \int_{\Omega} \nabla v \cdot \nabla u
+  \]
+</p>
+
+<h1>Continuity</h1>
+  <p>
+    Continuity of variables must be maintained across element boundaries
+      The trial function and its derivatives must be continuous across element edges
+      Continuity of displacement is C0 
+      Strain is the 2nd derivative of displacement, so C1 continuity is needed
+  </p>
+  
+<h1>Enforcing Boundary Conditions</h1>
+<p>
+  Dirichlet BCs are essential in strong form to make the solution unique:
+</p>
+<p>
+  \[
+  u = u_0 \; \text{on} \; \Gamma_D
+  \]
+</p>
+
+<p>Neumann BCs are natural, appearing naturally in weak form from integration by parts; they specify the derivative of the function at the boundary:</p>
+<p>
+  \[
+  \frac{\partial u}{\partial n} = g \; \text{on} \; \Gamma_N
+  \]
+</p>
+
+<p>Robin BCs are a weighted combination:</p>
+<p>
+  \[
+  a u + b \frac{\partial u}{\partial n} = h \; \text{on} \; \Gamma_R
+  \]
+</p>
+
+<h1>Comparison</h1>
+<p>
+    Weak form is more useful for computational solving
+      Reduces continuity requirements: lower order functions may be sufficient, reducing computational cost
+      Easier to approximate solutions with simpler shape functions
+      More flexible element shape/size for complex geometries
+</p>
+</body>
+</html>
