@@ -11,7 +11,7 @@
 <body>
 
 <h1>Optimization Problem</h1>
-
+<h3>here we will derive the adjoint method for sensitivity analysis for a density approach to topology optimisation</h3>
 <h2>Objective Function</h2>
 <p>
   Minimize the objective function:
@@ -19,7 +19,9 @@
   \min_{\rho} \; \Phi(\rho) = F^T U
   \]
 </p>
-
+<p>
+  Where \rho is density, \Phi is the objective function, F is the vector of forces, and U is the displacement vector.
+</p>
 <h2>Constraints</h2>
 <h3>Volume Constraint</h3>
 <p>
@@ -27,7 +29,9 @@
   \sum_{e=1}^{N} \rho_e v_e = v^T \rho \leq V^*
   \]
 </p>
-
+<p>
+  Where subscript e is element wise, N is the number of elements, v is volume fraction, and V^* is target volume fraction.
+</p>
 <h3>General Constraint</h3>
 <p>
   \[
@@ -56,7 +60,9 @@
   K(\rho) = \sum_{e=1}^{N} K_e (\rho_e) = \sum_{e=1}^{N} \rho_e^p K_e^0
   \]
 </p>
-
+<p> 
+  Where K is the stiffness matrix.
+</p>
 <hr>
 
 <h2>Sensitivity Analysis</h2>
@@ -75,7 +81,7 @@
   \[
   \hat{\Phi} = \Phi + \lambda^T (KU - F)
   \]
-  Then:
+  Where \lambda is the adjoint term. Then:
   \[
   \hat{\Phi}' = \frac{\partial \Phi}{\partial U} U' + \lambda^T (K'U + KU')
   \]
