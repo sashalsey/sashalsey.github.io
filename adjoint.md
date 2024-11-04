@@ -2,15 +2,15 @@ https://sashalsey.github.io/adjoint
 # Optimization Problem
 
 ## Objective Function
-\[
+$\[
 \min_{\rho} \; \Phi(\rho) = F^T U
-\]
+\]$
 
 ## Constraints
 ### Volume constraint:
-\[
+$\[
 \sum_{e=1}^{N} \rho_e v_e = v^T \rho \leq V^*
-\]
+\]$
 
 ### General constraint:
 \[
