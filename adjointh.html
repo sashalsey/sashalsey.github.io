@@ -22,7 +22,7 @@
   \]
 </p>
 <p>
-  Where \[\rho\] is density, &Phi; is the objective function, F is the vector of forces, and U is the displacement vector.
+  Where \[\rho\] is density, \[\Phi\] is the objective function, F is the vector of forces, and U is the displacement vector.
 </p>
 <h2>Constraints</h2>
 <h3>Volume Constraint</h3>
@@ -32,7 +32,7 @@
   \]
 </p>
 <p>
-  Where subscript e is element wise, N is the number of elements, v is volume fraction, and V^* is target volume fraction.
+  Where subscript e is element wise, N is the number of elements, \[v\] is volume fraction, and \[V^*\] is target volume fraction.
 </p>
 <h3>General Constraint</h3>
 <p>
@@ -83,7 +83,7 @@
   \[
   \hat{\Phi} = \Phi + \lambda^T (KU - F)
   \]
-  Where \lambda is the adjoint term. Then:
+  Where \[\lambda\] is the adjoint term. Then:
   \[
   \hat{\Phi}' = \frac{\partial \Phi}{\partial U} U' + \lambda^T (K'U + KU')
   \]
