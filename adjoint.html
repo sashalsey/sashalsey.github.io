@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Optimization Problem</title>
+  <script id="MathJax-script" async
+          src="https://cdn.jsdelivr.net/npm/mathjax@3.0.1/es5/tex-mml-chtml.js">
+  </script>
+</head>
+<body>
+
+<h1>Optimization Problem</h1>
+
+<h2>Objective Function</h2>
+<p>
+  Minimize the objective function:
+  \[
+  \min_{\rho} \; \Phi(\rho) = F^T U
+  \]
+</p>
+
+<h2>Constraints</h2>
+<h3>Volume Constraint</h3>
+<p>
+  \[
+  \sum_{e=1}^{N} \rho_e v_e = v^T \rho \leq V^*
+  \]
+</p>
+
+<h3>General Constraint</h3>
+<p>
+  \[
+  g_1(\rho, U) \leq g^*
+  \]
+</p>
+
+<h3>Bounds on Density</h3>
+<p>
+  The density \(\rho\) is constrained as:
+  \[
+  0 < \rho \leq \rho_{\text{min}} \leq 1
+  \]
+</p>
+
+<hr>
+
+<h2>State Equation</h2>
+<p>
+  The state equation is given by:
+  \[
+  K(\rho) U = F
+  \]
+  where
+  \[
+  K(\rho) = \sum_{e=1}^{N} K_e (\rho_e) = \sum_{e=1}^{N} \rho_e^p K_e^0
+  \]
+</p>
+
+<hr>
+
+<h2>Sensitivity Analysis</h2>
+<p>
+  Define \(\Phi = \Phi(U(\rho))\). The derivative with respect to \(\rho\) is:
+  \[
+  \Phi' = \frac{\partial \Phi}{\partial \rho} = \frac{\partial \Phi}{\partial U} \frac{\partial U}{\partial \rho}
+  \]
+</p>
+
+<hr>
+
+<h2>Using the Adjoint Method to Solve</h2>
+<p>
+  Define the augmented function \(\hat{\Phi}\) as:
+  \[
+  \hat{\Phi} = \Phi + \lambda^T (KU - F)
+  \]
+  Then:
+  \[
+  \hat{\Phi}' = \frac{\partial \Phi}{\partial U} U' + \lambda^T (K'U + KU')
+  \]
+</p>
+
+<hr>
+
+<h2>Finding \(\lambda\) Such That \(U'\) Terms Cancel</h2>
+<p>
+  Set:
+  \[
+  \left( \frac{\partial \Phi}{\partial U} + \lambda^T K \right) U' = 0
+  \]
+  which implies:
+  \[
+  \frac{\partial \Phi}{\partial U} + \lambda^T K = 0
+  \]
+  Thus, we get:
+  \[
+  K^T \lambda = -\frac{\partial \Phi^T}{\partial U}
+  \]
+</p>
+
+<hr>
+
+<h2>Back to the Original Problem</h2>
+<p>
+  Since \(\Phi = F^T U\), we have:
+  \[
+  \frac{\partial \Phi}{\partial U} = F^T
+  \]
+  Therefore:
+  \[
+  \frac{\partial \Phi^T}{\partial U} = F = -K \lambda
+  \]
+  and so:
+  \[
+  \lambda = -U
+  \]
+</p>
+
+</body>
+</html>
