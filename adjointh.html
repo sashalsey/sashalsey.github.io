@@ -123,5 +123,35 @@
   \]
 </p>
 
+  <h2>Back to Original Adjoint Equation for Sensitivity</h2>
+<p>
+  \[
+  \hat{\Phi}' = \frac{\partial \Phi}{\partial U} U' + \lambda^T (K' U + KU')
+  \]
+</p>
+
+<h3>Substitute In</h3>
+<p>
+  \[
+  \frac{\partial \Phi^T}{\partial U} = F = -K \lambda
+  \]
+</p>
+
+<h3>Resulting Expression</h3>
+<p>
+  This gives:
+  \[
+  \hat{\Phi}' = -K \lambda^T U' + \lambda^T (K' U + KU') = \lambda^T K' U = -U^T K' U
+  \]
+</p>
+
+<p>
+  Since \( K = \sum_{e=1}^{N} \rho_e^p K_e^0 \), then \( K' = \sum_{e=1}^{N} p \rho_e^{p-1} K_e^0 \).
+  Substituting in, we get:
+  \[
+  \hat{\Phi}' = -p \rho_e^{p-1} U^T K_e^0 U_e
+  \]
+</p>
+  
 </body>
 </html>
