@@ -34,7 +34,7 @@ vtkfile.write(mesh)
 #print(nelx,nely,nelz)
 # 2 Define Function Spaces
 V = fd.VectorFunctionSpace(mesh, "CG", 1)  # Displacement space
-R = fd.FunctionSpace(mesh, "DG", 1)  # Density space
+R = fd.FunctionSpace(mesh, "DG", 0)  # Density space
 uh = fd.Function(V) # Function to Hold Solution
 
 # 3 Define Symbolic Variables
