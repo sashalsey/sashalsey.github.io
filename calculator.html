@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Segment Calculator | Strava Cycling Calculator</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <div class="sidebar">
+        <a href="index.html">Home</a>
+        <a href="calculator.html">Calculator</a>
+    </div>
+    
+    <div class="main-content">
+        <h1>Segment Performance Calculator</h1>
+        
+        <div class="input-section">
+            <label for="segment-url">Strava Segment URL:</label>
+            <input type="text" id="segment-url" placeholder="https://www.strava.com/segments/12345">
+            
+            <label for="profile-url">Your Strava Profile URL:</label>
+            <input type="text" id="profile-url" placeholder="https://www.strava.com/athletes/67890">
+            
+            <button id="calculate-btn">Calculate Performance</button>
+        </div>
+        
+        <div id="results" class="results-section">
+            <!-- Results will be displayed here -->
+        </div>
+    </div>
+    
+    <script src="assets/js/calculator.js"></script>
+</body>
+</html>
