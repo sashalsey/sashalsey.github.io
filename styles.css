@@ -1,0 +1,60 @@
+<!-- File: styles.css -->
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f5f7fa;
+  color: #222;
+}
+
+.container {
+  display: flex;
+}
+
+.sidebar {
+  width: 220px;
+  background: #111827;
+  color: white;
+  height: 100vh;
+  padding: 20px;
+  position: fixed;
+}
+
+.sidebar h1 {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.sidebar nav a {
+  display: block;
+  color: #9ca3af;
+  text-decoration: none;
+  margin: 10px 0;
+}
+
+.sidebar nav a:hover {
+  color: white;
+}
+
+.content {
+  margin-left: 240px;
+  padding: 40px;
+  max-width: 800px;
+}
+
+.subtitle {
+  color: #6b7280;
+  margin-bottom: 20px;
+}
+
+details {
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+summary {
+  font-weight: bold;
+  cursor: pointer;
+}
